@@ -27,40 +27,47 @@ function getPlayerChoice() {
 	
 	if (choice != "PAPER" || "SCISSORS" || "ROCK")
 	{
-		console.log("Wrong Entry");
-		choice;
+		return console.log("Wrong Entry");
+		
 	}
 }
 
 function playRound(getPlayerChoice, getComputerChoice)
-{	for (let i = 0; i < 5; i++) 
-	{
+{	
+	let winner = 1;
 		if (getPlayerChoice == getComputerChoice){
+			console.log("Player:", getPlayerChoice)
+			console.log("Player:", getComputerChoice)
 			return console.log("Tie");
+			
 		}	
 	    else if (getPlayerChoice == "PAPER" && getComputerChoice == "ROCK" || getPlayerChoice == "ROCK" && getComputerChoice == "SCISSORS"
 				   || getPlayerChoice == "SCISSORS" && getComputerChoice == "PAPER"){
+			console.log("Player:", getPlayerChoice)
+			console.log("Player:", getComputerChoice)
 			return console.log("Player Wins");
 			
 		} else {
+			console.log("Player:", getPlayerChoice)
+			console.log("Player:", getComputerChoice)
 			return console.log("Computer Wins");
 		}	
-	}
-		
 }	
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
+
 
 function game()
 {
-	for (let i = 0; i < 5; i++)
-	{
-		getPlayerChoice();
-		getComputerChoice();
-		playRound(playerChoice, computerChoice)
+	for (let i = 0; i < 5; i++){
+		let playerChoice = getPlayerChoice();
+		let computerChoice = getComputerChoice();
+		playRound(playerChoice, computerChoice);
+
+		if(i < 5){
+			return console.log(playerChoice.winner)
+		}
 	}
-	
+		
 }
 
 game();
