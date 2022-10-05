@@ -33,17 +33,20 @@ function getPlayerChoice() {
 }
 
 function playRound(getPlayerChoice, getComputerChoice)
-{	
+{	for (let i = 0; i < 5; i++) 
+	{
 		if (getPlayerChoice == getComputerChoice){
 			return console.log("Tie");
 		}	
 	    else if (getPlayerChoice == "PAPER" && getComputerChoice == "ROCK" || getPlayerChoice == "ROCK" && getComputerChoice == "SCISSORS"
 				   || getPlayerChoice == "SCISSORS" && getComputerChoice == "PAPER"){
-			return console.log("Player Wins")
+			return console.log("Player Wins");
 			
 		} else {
 			return console.log("Computer Wins");
 		}	
+	}
+		
 }	
 
 let playerChoice = getPlayerChoice();
@@ -51,12 +54,13 @@ let computerChoice = getComputerChoice();
 
 function game()
 {
-	for (let i = 0; i < 5; i++) 
+	for (let i = 0; i < 5; i++)
 	{
-		playRound(playerChoice, computerChoice);
-		console.log("Player:", playerChoice);
-		console.log("Computer", computerChoice);
+		getPlayerChoice();
+		getComputerChoice();
+		playRound(playerChoice, computerChoice)
 	}
+	
 }
 
 game();
