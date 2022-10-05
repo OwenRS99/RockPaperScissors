@@ -34,7 +34,6 @@ function getPlayerChoice() {
 
 function playRound(getPlayerChoice, getComputerChoice)
 {	
-	let winner = 1;
 		if (getPlayerChoice == getComputerChoice){
 			console.log("Player:", getPlayerChoice)
 			console.log("Player:", getComputerChoice)
@@ -54,18 +53,12 @@ function playRound(getPlayerChoice, getComputerChoice)
 		}	
 }	
 
-
-
 function game()
 {
 	for (let i = 0; i < 5; i++){
 		let playerChoice = getPlayerChoice();
 		let computerChoice = getComputerChoice();
 		playRound(playerChoice, computerChoice);
-
-		if(i < 5){
-			return console.log(playerChoice.winner)
-		}
 	}
 		
 }
